@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Card from './components/Cards/Card';
+import Loading from './components/Loading/Loading';
+import Nav from './components/Navbar/Nav';
+
+
+
 
 function App() {
+  const [isloading, setIsloading] = useState(false);
+  setInterval(() => { setIsloading(true); }, 2000);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {!isloading ? <div> <Loading/> </div> :
+       <div> 
+        
+       <Nav/>  
+
+       <Card/> 
+       </div>}
     </div>
   );
 }
