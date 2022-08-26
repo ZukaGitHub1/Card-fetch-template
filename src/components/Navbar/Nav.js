@@ -6,7 +6,7 @@ const Nav = () => {
         <div className='topnav'  id="header">
             <nav role="navigation" id="nav-main" >
                 {NavLink.map(index => (
-                 <a href={index.href}> {index.name}</a>
+                 <a href={index.href} key={index.id}> {index.name}</a>
                 ))}
           
             </nav>
